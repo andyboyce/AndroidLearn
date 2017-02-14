@@ -1,0 +1,41 @@
+
+{
+	"buildFiles" : 
+	[
+		"D:/Dropbox/Dev/Code/Github/AndroidLearn/AndyLearn/app/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"E:\\soft\\MyPlugin\\SDK\\cmake\\3.6.3155560\\bin\\cmake.exe --build D:\\Dropbox\\Dev\\Code\\Github\\AndroidLearn\\AndyLearn\\app\\.externalNativeBuild\\cmake\\release\\mips --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"native-lib-Release-mips" : 
+		{
+			"abi" : "mips",
+			"artifactName" : "native-lib",
+			"buildCommand" : "E:\\soft\\MyPlugin\\SDK\\cmake\\3.6.3155560\\bin\\cmake.exe --build D:\\Dropbox\\Dev\\Code\\Github\\AndroidLearn\\AndyLearn\\app\\.externalNativeBuild\\cmake\\release\\mips --target native-lib",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  -target mipsel-none-linux-android -gcc-toolchain E:/soft/MyPlugin/SDK/ndk-bundle/toolchains/mipsel-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=E:/soft/MyPlugin/SDK/ndk-bundle/platforms/android-9/arch-mips  -Dnative_lib_EXPORTS -isystem E:\\soft\\MyPlugin\\SDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include -isystem E:\\soft\\MyPlugin\\SDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\libs\\mips\\include -isystem E:\\soft\\MyPlugin\\SDK\\ndk-bundle\\sources\\cxx-stl\\gnu-libstdc++\\4.9\\include\\backward  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -fno-exceptions -fno-rtti  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC    -c ",
+					"src" : "D:/Dropbox/Dev/Code/Github/AndroidLearn/AndyLearn/app/src/main/cpp/native-lib.cpp",
+					"workingDirectory" : "D:/Dropbox/Dev/Code/Github/AndroidLearn/AndyLearn/app/.externalNativeBuild/cmake/release/mips"
+				}
+			],
+			"output" : "D:/Dropbox/Dev/Code/Github/AndroidLearn/AndyLearn/app/build/intermediates/cmake/release/obj/mips/libnative-lib.so",
+			"toolchain" : "1427706725"
+		}
+	},
+	"toolchains" : 
+	{
+		"1427706725" : 
+		{
+			"cCompilerExecutable" : "E:/soft/MyPlugin/SDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "E:/soft/MyPlugin/SDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

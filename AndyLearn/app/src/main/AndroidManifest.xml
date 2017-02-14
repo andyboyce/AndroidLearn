@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.andylearn">
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+
+        <activity android:name="ApiDemos">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!--      APPLICATION PACKAGE SAMPLES      -->
+        <!-- ************************************* -->
+
+        <!-- Activity 启动模式 -->
+
+        <activity
+                android:name=".launchmode.singleinstance.A_Act"
+                android:label="launchMode/SingleInstance/2个栈">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".launchmode.singleinstance.B_Act"
+                android:launchMode="singleInstance"/>
+        <activity
+                android:name=".launchmode.singleinstance.C_Act"
+                android:launchMode="singleInstance"/>
+
+        <activity
+                android:name=".launchmode.singletask.C_Act"
+                android:launchMode="singleTask"
+                android:label="launchMode/SingleTask/检验后台的CD">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".launchmode.singletask.D_Act"
+                android:launchMode="singleTask"/>
+
+        <activity
+                android:name=".launchmode.singletask.A_Act"
+                android:launchMode="singleTask"
+                android:taskAffinity="com.andylearn.launchmode.singletask.second"/>
+        <activity android:name=".launchmode.singletask.B_Act"/>
+
+        <!-- Activity 启动模式 end-->
+
+        <!-- Activity ItentFilter过滤 -->
+
+        <activity
+                android:name=".intentfilter.A_Act"
+                android:label="IntentFilter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".intentfilter.To_Act">
+            <intent-filter>
+                <action android:name="android.intent.action.a1"/>
+                <action android:name="android.intent.action.a2"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+
+            <intent-filter>
+                <category android:name="android.intent.category.bb1"/>
+                <category android:name="android.intent.category.bb2"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.b1"/>
+                <action android:name="android.intent.action.b2"/>
+
+                <category android:name="android.intent.category.b1"/>
+                <category android:name="android.intent.category.b2"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.c1"/>
+                <action android:name="android.intent.action.c2"/>
+
+                <category android:name="android.intent.category.c1"/>
+                <category android:name="android.intent.category.c2"/>
+                <category android:name="android.intent.category.c3"/>
+
+                <data
+                        android:mimeType="video/*"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
