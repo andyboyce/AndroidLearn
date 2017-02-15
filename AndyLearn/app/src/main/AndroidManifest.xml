@@ -25,43 +25,69 @@
         <!-- Activity 启动模式 -->
 
         <activity
-                android:name=".launchmode.singleinstance.A_Act"
-                android:label="launchMode/SingleInstance/2个栈">
+                android:name=".launchmode.singleinstance.Test_Act"
+                android:label="launchMode/SingleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
         <activity
+                android:name=".launchmode.singleinstance.A_Act"
+                android:launchMode="singleInstance"/>
+        <activity
                 android:name=".launchmode.singleinstance.B_Act"
+                android:taskAffinity="singleinstance.task2"
                 android:launchMode="singleInstance"/>
         <activity
                 android:name=".launchmode.singleinstance.C_Act"
+                android:taskAffinity="singleinstance.task2"
                 android:launchMode="singleInstance"/>
+
+        <activity
+                android:name=".launchmode.singletask.Test_Act"
+                android:label="launchMode/singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".launchmode.singletask.A_Act"
+                android:launchMode="singleTask"/>
+        <activity
+                android:name=".launchmode.singletask.B_Act"
+                android:launchMode="singleTask"/>
 
         <activity
                 android:name=".launchmode.singletask.C_Act"
                 android:launchMode="singleTask"
-                android:label="launchMode/SingleTask/检验后台的CD">
+                android:taskAffinity="singletask.task2">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.SAMPLE_CODE"/>
+                <action android:name="android.intent.action.c"/>
+
+                <category android:name="android.intent.category.c"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
+
         </activity>
         <activity
                 android:name=".launchmode.singletask.D_Act"
-                android:launchMode="singleTask"/>
-
-        <activity
-                android:name=".launchmode.singletask.A_Act"
                 android:launchMode="singleTask"
-                android:taskAffinity="com.andylearn.launchmode.singletask.second"/>
-        <activity android:name=".launchmode.singletask.B_Act"/>
+                android:taskAffinity="singletask.task2">
+            <intent-filter>
+                <action android:name="android.intent.action.d"/>
+
+                <category android:name="android.intent.category.d"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </activity>
 
         <!-- Activity 启动模式 end-->
 
         <!-- Activity ItentFilter过滤 -->
-
         <activity
                 android:name=".intentfilter.A_Act"
                 android:label="IntentFilter">
@@ -104,6 +130,19 @@
 
                 <data
                         android:mimeType="video/*"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Activity ItentFilter过滤 end-->
+
+        <!-- IPC -->
+
+        <activity
+                android:name=".ipc.aidl.AIDLClientAct"
+                android:label="ipc/aidl">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
     </application>

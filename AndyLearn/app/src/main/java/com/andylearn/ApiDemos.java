@@ -34,21 +34,30 @@ import java.util.List;
 import java.util.Map;
 
 public class ApiDemos extends ListActivity {
+    public static final String EXTRA_NAME = "com.example.android.apis.Path";
+    private final static Comparator<Map<String, Object>> sDisplayNameComparator =
+            new Comparator<Map<String, Object>>() {
+                private final Collator collator = Collator.getInstance();
+
+                public int compare(Map<String, Object> map1, Map<String, Object> map2) {
+                    return collator.compare(map1.get("title"), map2.get("title"));
+                }
+            };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
+
         Intent intent = getIntent();
-        String path = intent.getStringExtra("com.example.android.apis.Path");
-        
+        String path = intent.getStringExtra(EXTRA_NAME);
+
         if (path == null) {
             path = "";
         }
 
         setListAdapter(new SimpleAdapter(this, getData(path),
-                android.R.layout.simple_list_item_1, new String[] { "title" },
-                new int[] { android.R.id.text1 }));
+                android.R.layout.simple_list_item_1, new String[]{"title"},
+                new int[]{android.R.id.text1}));
         getListView().setTextFilterEnabled(true);
     }
 
@@ -66,16 +75,16 @@ public class ApiDemos extends ListActivity {
 
         String[] prefixPath;
         String prefixWithSlash = prefix;
-        
+
         if (prefix.equals("")) {
             prefixPath = null;
         } else {
             prefixPath = prefix.split("/");
             prefixWithSlash = prefix + "/";
         }
-        
+
         int len = list.size();
-        
+
         Map<String, Boolean> entries = new HashMap<String, Boolean>();
 
         for (int i = 0; i < len; i++) {
@@ -84,9 +93,9 @@ public class ApiDemos extends ListActivity {
             String label = labelSeq != null
                     ? labelSeq.toString()
                     : info.activityInfo.name;
-            
+
             if (prefixWithSlash.length() == 0 || label.startsWith(prefixWithSlash)) {
-                
+
                 String[] labelPath = label.split("/");
 
                 String nextLabel = prefixPath == null ? labelPath[0] : labelPath[prefixPath.length];
@@ -105,29 +114,20 @@ public class ApiDemos extends ListActivity {
         }
 
         Collections.sort(myData, sDisplayNameComparator);
-        
+
         return myData;
     }
-
-    private final static Comparator<Map<String, Object>> sDisplayNameComparator =
-        new Comparator<Map<String, Object>>() {
-        private final Collator   collator = Collator.getInstance();
-
-        public int compare(Map<String, Object> map1, Map<String, Object> map2) {
-            return collator.compare(map1.get("title"), map2.get("title"));
-        }
-    };
 
     protected Intent activityIntent(String pkg, String componentName) {
         Intent result = new Intent();
         result.setClassName(pkg, componentName);
         return result;
     }
-    
+
     protected Intent browseIntent(String path) {
         Intent result = new Intent();
         result.setClass(this, ApiDemos.class);
-        result.putExtra("com.example.android.apis.Path", path);
+        result.putExtra(EXTRA_NAME, path);
         return result;
     }
 
@@ -141,7 +141,7 @@ public class ApiDemos extends ListActivity {
     @Override
     @SuppressWarnings("unchecked")
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        Map<String, Object> map = (Map<String, Object>)l.getItemAtPosition(position);
+        Map<String, Object> map = (Map<String, Object>) l.getItemAtPosition(position);
 
         Intent intent = new Intent((Intent) map.get("intent"));
         intent.addCategory(Intent.CATEGORY_SAMPLE_CODE);

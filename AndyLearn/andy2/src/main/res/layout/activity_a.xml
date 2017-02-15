@@ -15,19 +15,13 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!我是第二个工程"/>
+            android:text="Hello World!我是第二个工程A"/>
 
     <Button
-            android:id="@+id/btn_toC"
-            android:onClick="onClick2C"
+            android:id="@+id/btn_toB"
+            android:onClick="onClick2B"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="启动第一个工程的C"/>
+            android:text="启动B"/>
 
-    <Button
-            android:id="@+id/btn_toD"
-            android:onClick="onClick2D"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="启动第一个工程的D"/>
 </LinearLayout>

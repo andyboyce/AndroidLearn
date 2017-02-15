@@ -15,11 +15,11 @@ public class B_Act extends Activity {
         super.onCreate(savedInstanceState);
 
         Button button = new Button(this);
-        button.setText("B--启动C/D");
+        button.setText("B--启动C");
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(B_Act.this, D_Act.class));
+                startActivity(new Intent(B_Act.this, C_Act.class));
             }
         });
 
