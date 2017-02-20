@@ -34,7 +34,7 @@ public class IPCService extends Service {
     };
 
     public IBinder onBind(Intent intent) {
-        Log.e("--Service onBind", "通过ADIL文件生成Binder,这里服务启动");
+        Log.e("--Service onBind", "通过ADIL文件生成Binder,这里服务启动" + " sub=" + this.stub);
         return stub;
     }
 

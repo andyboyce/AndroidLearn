@@ -26,8 +26,8 @@ public class AIDLClientAct extends Activity {
     private ServiceConnection sc = new ServiceConnection() {
 
         public void onServiceConnected(ComponentName name, IBinder service) {
-            Log.e(TAG,"--onServiceConnected");
             proxy = ITestService.Stub.asInterface(service);
+            Log.e(TAG,"--onServiceConnected + stub=" + proxy.asBinder());
 
         }
 
