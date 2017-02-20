@@ -18,16 +18,15 @@ import com.andy2.ITestService;
 import com.andylearn.R;
 
 
-
 public class AIDLClientAct extends Activity {
+    public static final String TAG = "AIDLClientAct--";
     TextView tvnote;
     private ITestService proxy;
-    public static final String TAG = "AIDLClientAct--";
     private ServiceConnection sc = new ServiceConnection() {
 
         public void onServiceConnected(ComponentName name, IBinder service) {
             proxy = ITestService.Stub.asInterface(service);
-            Log.e(TAG,"--onServiceConnected + stub=" + proxy.asBinder());
+            Log.e(TAG, "--onServiceConnected + stub=" + proxy.asBinder());
 
         }
 
